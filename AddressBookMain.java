@@ -21,27 +21,58 @@ class AddressBookMain {
 
 		return new Person(firstName, lastName, address, city, state, zipCode, phoneNumber);
 	}
+
+static Person editPersonDetails(Person person) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter the Address");
+		person.address = sc.next();
+		System.out.println("Enter the City");
+		person.city = sc.next();
+		System.out.println("Enter the State");
+		person.state = sc.next();
+		System.out.println("Enter the ZipCode");
+		person.zipCode = sc.nextInt();
+		System.out.println("Enter the contact number...");
+		person.phoneNumber = sc.next();
+		return person;
+
+	}
+	
 static void menu() {
 		Person person = null;
 		int choice;
 		do {
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Enter ur choice press 1 For Add person press 2 For Edit person 3 For the Delete 4 For Display ");
+			System.out.println("Enter ur choice 1: Add \n 2: Edit \n 3: Display Details  ");
 			choice = sc.nextInt();
 			switch (choice) {
 			case 1:
 				person = readDataFromConsole();
 				break;
+			case 2:
+
+				System.out.println("Enter the person Name to edit details..");
+				String firstName = sc.next();
+				if (firstName.equals(person.firstName)) {
+					person = editPersonDetails(person);
+				} else {
+					System.out.println(firstName + " is not exists ");
+				}
+				break;
+		case 3:
+				System.out.println(person);
+				break;
 			default:
-				System.out.println("Enter numer from 1 to 1");
+				System.out.println("Enter numer from 1 to 3");
 			}
-		} while (choice<1);
+		} while (choice<4);
 	}
 
 public static void main(String[] args) {
 //		 Person person = new Person("Suraj", "Temkar", "Chiplun", "Ratngiri",
 //				"Maharastra", 342345, "4578965123");
-			Person person = readDataFromConsole();
+//			Person person = readDataFromConsole();
 			menu();
 	}
 }
