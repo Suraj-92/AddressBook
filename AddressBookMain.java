@@ -55,7 +55,7 @@ public class AddressBookMain {
 			choice = sc.nextInt();
 			switch (choice) {
 			case 1:
-					person = readDataFromConsole();		
+				person = readDataFromConsole();		
 				Person person1 = readDataFromConsole();
 				Person person2 = readDataFromConsole();
 						 
