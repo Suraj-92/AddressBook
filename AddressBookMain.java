@@ -55,7 +55,22 @@ public class AddressBookMain {
 			choice = sc.nextInt();
 			switch (choice) {
 			case 1:
-				person = readDataFromConsole();
+					person = readDataFromConsole();		
+				Person person1 = readDataFromConsole();
+				Person person2 = readDataFromConsole();
+						 
+						 ArrayList<Person> arrl = new ArrayList<Person>();
+							arrl.add(person);
+							arrl.add(person1);
+							arrl.add(person2);
+							
+							ListIterator<Person> li = arrl.listIterator();
+								while(li.hasNext())
+								{
+									System.out.println(li.next());
+								}
+							
+							System.out.println(" ArrayList is :"+arrl);
 				break;
 			case 2:
 
