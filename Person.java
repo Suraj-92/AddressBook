@@ -4,10 +4,10 @@ public class Person {
 	public String address;
 	public String city;
 	public String state;
-	public int zipCode;
+	public String zipCode;
 	public String phoneNumber;
 	
-	Person(String firstName, String lastName, String address, String city, String state, int zipCode,String phoneNumber)
+	Person(String firstName, String lastName, String address, String city, String state, String zipCode,String phoneNumber)
 	{
 		this.firstName = firstName;
 		this.lastName = lastName;
